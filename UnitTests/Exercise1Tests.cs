@@ -10,7 +10,7 @@ namespace UnitTests
         public void PromotionDetailsAreCorrect()
         {
             string promotionDetails = Exercise1.Run();
-            Assert.AreEqual("Type: Percent. Code: 10Off. Description: Get 10% off. Discount: 10", promotionDetails);
+            Assert.AreEqual("Code: 10Off. Description: Get 10% off. Discount: 10", promotionDetails);
         }
     }
 }
