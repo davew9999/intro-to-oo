@@ -1,15 +1,15 @@
-using IntroToOO;
+﻿using IntroToOO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTests
 {
     [TestClass]
-    public class Exercise1Tests
+    public class Exercise2Tests
     {
         [TestMethod]
-        public void PromotionDetailsAreCorrect()
+        public void DiscountIsCorrectlyApplied()
         {
-            string promotionDetails = Exercise1.Run();
+            string promotionDetails = Exercise2.Run();
             Assert.AreEqual("Type: Percent. Code: 10Off. Description: Get 10% off. Discount: 10", promotionDetails);
         }
     }
