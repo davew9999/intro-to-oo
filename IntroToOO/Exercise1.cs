@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace IntroToOO
+﻿namespace IntroToOO
 {
     public static class Exercise1
     {
