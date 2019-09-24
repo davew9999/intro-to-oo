@@ -2,9 +2,9 @@
 {
     public class Animal
     {
-        private readonly string Name;
-        private readonly int Age;
-        private readonly string Breed;
+        protected readonly string Name;
+        protected readonly int Age;
+        protected readonly string Breed;
 
         public Animal(string name, int age, string breed)
         {
