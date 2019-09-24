@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace IntroToOO
+﻿namespace IntroToOO
 {
     public class Exercise3
     {
@@ -19,7 +15,10 @@ namespace IntroToOO
                 Discount = discount;
             }
 
-            public string Details => $"Code: {Code}. Description: {Description}. Discount: {Discount}";
+            public string Details()
+            {
+                return $"Code: {Code}. Description: {Description}. Discount: {Discount}";
+            }
 
             public decimal DiscountToApply(decimal price)
             {
@@ -40,7 +39,10 @@ namespace IntroToOO
                 Discount = discount;
             }
 
-            public string Details => $"Code: {Code}. Description: {Description}. Discount: {Discount}";
+            public string Details()
+            {
+                return $"Code: {Code}. Description: {Description}. Discount: {Discount}";
+            }
 
             public decimal DiscountToApply(decimal price)
             {

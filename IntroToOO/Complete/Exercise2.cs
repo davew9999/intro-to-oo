@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace IntroToOO.Complete
+﻿namespace IntroToOO.Complete
 {
     public class Exercise2
     {
@@ -19,7 +15,10 @@ namespace IntroToOO.Complete
                 Discount = discount;
             }
 
-            public string Details => $"Code: {Code}. Description: {Description}. Discount: {Discount}";
+            public string Details()
+            {
+                return $"Code: {Code}. Description: {Description}. Discount: {Discount}";
+            }
         }
 
         public static string Run()
@@ -30,7 +29,7 @@ namespace IntroToOO.Complete
             //promotion.Description = "a new description!";
             //promotion.Discount = 100;
 
-            return promotion.Details;
+            return promotion.Details();
         }
     }
 }

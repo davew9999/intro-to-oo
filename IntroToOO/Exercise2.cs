@@ -8,7 +8,10 @@
             public string Description;
             public int Discount;
 
-            public string Details => $"Code: {Code}. Description: {Description}. Discount: {Discount}";
+            public string Details()
+            {
+                return $"Code: {Code}. Description: {Description}. Discount: {Discount}";
+            }
         }
 
         public static string Run()
@@ -21,7 +24,7 @@
             // Imagine somebody accidentally changed the code to give 100% off!
             promotion.Discount = 100;
 
-            return promotion.Details;
+            return promotion.Details();
         }
     }
 }

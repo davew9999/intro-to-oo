@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace IntroToOO
 {
@@ -19,7 +17,10 @@ namespace IntroToOO
                 Discount = discount;
             }
 
-            public string Details => $"Code: {Code}. Description: {Description}. Discount: {Discount}";
+            public string Details()
+            {
+                return $"Code: {Code}. Description: {Description}. Discount: {Discount}";
+            }
         }
 
         public class PercentagePromotion : Promotion
