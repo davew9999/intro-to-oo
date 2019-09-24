@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace IntroToOO.PresentationCode.Exercise2
+﻿namespace IntroToOO.PresentationCode.Exercise2
 {
     public class Cat
     {

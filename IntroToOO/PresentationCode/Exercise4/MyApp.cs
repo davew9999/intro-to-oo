@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace IntroToOO.PresentationCode.Exercise4
+﻿namespace IntroToOO.PresentationCode.Exercise4
 {
     public class MyApp
     {
