@@ -1,4 +1,4 @@
-﻿namespace IntroToOO.PresentationCode.Exercise1
+﻿namespace Exercise1.PresentationCode
 {
     public class MyApp
     {
