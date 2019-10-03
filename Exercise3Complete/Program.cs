@@ -1,25 +1,32 @@
 ﻿using System;
 
-namespace Exercise3
+namespace Exercise3Complete
 {
     class Program
     {
-        public class PercentagePromotion
+        public class Promotion
         {
-            private readonly string Code;
-            private readonly string Description;
-            private readonly int Discount;
+            protected readonly string Code;
+            protected readonly string Description;
+            protected readonly int Discount;
 
-            public PercentagePromotion(string code, string description, int discount)
+            protected Promotion(string code, string description, int discount)
             {
                 Code = code;
                 Description = description;
                 Discount = discount;
             }
-
-            public string Details()
+            
+            public string Details() 
             {
                 return $"Code: {Code}. Description: {Description}. Discount: {Discount}";
+            }
+        }
+
+        public class PercentagePromotion : Promotion
+        {
+            public PercentagePromotion(string code, string description, int discount) : base(code, description, discount)
+            {
             }
 
             public decimal DiscountToApply(decimal price)
@@ -28,22 +35,10 @@ namespace Exercise3
             }
         }
 
-        public class MoneyOffPromotion
+        public class MoneyOffPromotion : Promotion
         {
-            private readonly string Code;
-            private readonly string Description;
-            private readonly int Discount;
-
-            public MoneyOffPromotion(string code, string description, int discount)
+            public MoneyOffPromotion(string code, string description, int discount) : base(code, description, discount)
             {
-                Code = code;
-                Description = description;
-                Discount = discount;
-            }
-
-            public string Details()
-            {
-                return $"Code: {Code}. Description: {Description}. Discount: {Discount}";
             }
 
             public decimal DiscountToApply(decimal price)
@@ -51,11 +46,13 @@ namespace Exercise3
                 return Discount;
             }
         }
+
         public static void RunPercentagePromotion()
         {
             decimal productPrice = 200;
             var promotion = new PercentagePromotion("10Off", "Get 10% off", 10);
             Console.WriteLine("PercentagePromotion: " + promotion.DiscountToApply(productPrice));
+
         }
 
         public static void RunMoneyOffPromotion()
