@@ -1,6 +1,8 @@
-﻿namespace IntroToOO.Complete
+﻿using System;
+
+namespace Exercise4Complete
 {
-    public class Exercise4
+    class Program
     {
         public abstract class Promotion
         {
@@ -51,6 +53,16 @@
         {
             decimal productPrice = 200;
             return promotion.DiscountToApply(productPrice);
+        }
+
+
+        static void Main()
+        {
+            var percentagePromotion = new PercentagePromotion("10Off", "Get 10% off", 10);
+            Console.WriteLine("PercentagePromotion: " + RunPromotion(percentagePromotion));
+
+            var moneyOffPromotion = new MoneyOffPromotion("£30Off", "Get £30 off", 30);
+            Console.WriteLine("MoneyOffPromotion: " + RunPromotion(moneyOffPromotion));
         }
     }
 }
