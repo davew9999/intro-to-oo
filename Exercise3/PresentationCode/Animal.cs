@@ -1,4 +1,4 @@
-﻿namespace IntroToOO.PresentationCode.Exercise3
+﻿namespace Exercise3.PresentationCode
 {
     public class Animal
     {

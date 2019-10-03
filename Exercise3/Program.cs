@@ -1,6 +1,8 @@
-﻿namespace IntroToOO
+﻿using System;
+
+namespace Exercise3
 {
-    public class Exercise3
+    class Program
     {
         public class PercentagePromotion
         {
@@ -49,20 +51,32 @@
                 return Discount;
             }
         }
-
-        public static decimal RunPercentagePromotion()
+        public static void RunPercentagePromotion()
         {
             decimal productPrice = 200;
             var promotion = new PercentagePromotion("10Off", "Get 10% off", 10);
-            return promotion.DiscountToApply(productPrice);
-
+            Console.WriteLine(promotion.DiscountToApply(productPrice));
         }
 
-        public static decimal RunMoneyOffPromotion()
+        public static void RunMoneyOffPromotion()
         {
             decimal productPrice = 200;
             var promotion = new MoneyOffPromotion("£30Off", "Get £30 off", 30);
-            return promotion.DiscountToApply(productPrice);
+            Console.WriteLine(promotion.DiscountToApply(productPrice));
+        }
+
+        static void Main(string[] args)
+        {
+            if (args.Length != 1) return;
+            string methodToRun = args[0];
+            if (methodToRun == "Percentage")
+            {
+                RunPercentagePromotion();
+            }
+            else if (methodToRun == "MoneyOff")
+            {
+                RunMoneyOffPromotion();
+            }
         }
     }
 }
