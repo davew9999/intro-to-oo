@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace IntroToOO
+namespace Exercise4
 {
-    public class Exercise4
+    class Program
     {
         public class Promotion
         {
@@ -66,6 +66,15 @@ namespace IntroToOO
             }
 
             throw new Exception("Don't know how to handle this type of promotion!");
+        }
+
+        static void Main()
+        {
+            var percentagePromotion = new PercentagePromotion("10Off", "Get 10% off", 10);
+            Console.WriteLine("PercentagePromotion: " + RunPromotion(percentagePromotion));
+
+            var moneyOffPromotion = new MoneyOffPromotion("£30Off", "Get £30 off", 30);
+            Console.WriteLine("MoneyOffPromotion: " + RunPromotion(moneyOffPromotion));
         }
     }
 }
