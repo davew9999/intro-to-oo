@@ -18,7 +18,7 @@ namespace Exercise1Complete
     {
         static void Main()
         {
-            var promotion = new Promotion{Code = "10Off", Description = "Get 10% off", Discount = 10};
+            var promotion = new Promotion {Code = "10Off", Description = "Get 10% off", Discount = 10};
             Console.WriteLine(promotion.Details());
         }
     }

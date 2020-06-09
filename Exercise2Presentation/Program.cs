@@ -1,4 +1,6 @@
-﻿namespace Exercise2.PresentationCode
+﻿using System;
+
+namespace Exercise2Presentation
 {
     public class Cat
     {
@@ -16,6 +18,15 @@
         public string SayHello()
         {
             return $"Hi. My name is {Name} and I am {Age} years old";
+        }
+    }
+
+    class Program
+    {
+        static void Main()
+        {
+            var cat = new Cat("Kitty", 6, "Persian");
+            Console.WriteLine(cat.SayHello());
         }
     }
 }
