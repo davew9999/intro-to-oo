@@ -1,65 +1,56 @@
 ﻿using System;
 
-namespace Exercise4Presentation
+var cat = new Cat("Kitty", 6, "Persian");
+var dog = new Dog("Walter", 4, "Jack Russell Terrier");
+Console.WriteLine("Cat: " + cat.WhatAreYou());
+Console.WriteLine("Dog: " + dog.WhatAreYou());
+
+//string WhatAreYou(Animal animal)
+//{
+//    return animal.WhatAreYou();
+//}
+
+public abstract class Animal
 {
-    public abstract class Animal
+    private readonly string Name;
+    private readonly int Age;
+    private readonly string Breed;
+
+    public Animal(string name, int age, string breed)
     {
-        private readonly string Name;
-        private readonly int Age;
-        private readonly string Breed;
-
-        public Animal(string name, int age, string breed)
-        {
-            Name = name;
-            Age = age;
-            Breed = breed;
-        }
-
-        public string SayHello()
-        {
-            return $"Hi. My name is {Name} and I am {Age} years old";
-        }
-
-        public abstract string WhatAreYou();
+        Name = name;
+        Age = age;
+        Breed = breed;
     }
 
-    public class Cat : Animal
+    public string SayHello()
     {
-        public Cat(string name, int age, string breed) : base(name, age, breed)
-        {
-        }
-
-        public override string WhatAreYou()
-        {
-            return "I'm a cat!";
-        }
+        return $"Hi. My name is {Name} and I am {Age} years old";
     }
 
-    public class Dog : Animal
-    {
-        public Dog(string name, int age, string breed) : base(name, age, breed)
-        {
-        }
+    public abstract string WhatAreYou();
+}
 
-        public override string WhatAreYou()
-        {
-            return "I'm a dog!";
-        }
+public class Cat : Animal
+{
+    public Cat(string name, int age, string breed) : base(name, age, breed)
+    {
     }
 
-    class Program
+    public override string WhatAreYou()
     {
-        public string WhatAreYou(Animal animal)
-        {
-            return animal.WhatAreYou();
-        }
+        return "I'm a cat!";
+    }
+}
 
-        static void Main(string[] args)
-        {
-            var cat = new Cat("Kitty", 6, "Persian");
-            var dog = new Dog("Walter", 4, "Jack Russell Terrier");
-            Console.WriteLine("Cat: " + cat.WhatAreYou());
-            Console.WriteLine("Dog: " + dog.WhatAreYou());
-        }
+public class Dog : Animal
+{
+    public Dog(string name, int age, string breed) : base(name, age, breed)
+    {
+    }
+
+    public override string WhatAreYou()
+    {
+        return "I'm a dog!";
     }
 }

@@ -1,32 +1,24 @@
 ﻿using System;
 
-namespace Exercise2Presentation
+var cat = new Cat("Kitty", 6, "Persian");
+Console.WriteLine(cat.SayHello());
+
+
+public class Cat
 {
-    public class Cat
+    private readonly string Name;
+    private readonly int Age;
+    private readonly string Breed;
+
+    public Cat(string name, int age, string breed)
     {
-        private readonly string Name;
-        private readonly int Age;
-        private readonly string Breed;
-
-        public Cat(string name, int age, string breed)
-        {
-            Name = name;
-            Age = age;
-            Breed = breed;
-        }
-
-        public string SayHello()
-        {
-            return $"Hi. My name is {Name} and I am {Age} years old";
-        }
+        Name = name;
+        Age = age;
+        Breed = breed;
     }
 
-    class Program
+    public string SayHello()
     {
-        static void Main()
-        {
-            var cat = new Cat("Kitty", 6, "Persian");
-            Console.WriteLine(cat.SayHello());
-        }
+        return $"Hi. My name is {Name} and I am {Age} years old";
     }
 }

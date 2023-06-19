@@ -1,25 +1,17 @@
 ﻿using System;
 
-namespace Exercise1Presentation
+var cat = new Cat {Age = 6, Breed = "Persian", Name = "Kitty"};
+Console.WriteLine(cat.SayHello());
+
+
+public class Cat
 {
-    public class Cat
-    {
-        public string Name;
-        public int Age;
-        public string Breed;
+    public string Name;
+    public int Age;
+    public string Breed;
 
-        public string SayHello()
-        {
-            return $"Hi. My name is {Name} and I am {Age} years old";
-        }
-    }
-
-    class Program
+    public string SayHello()
     {
-        static void Main()
-        {
-            var cat = new Cat {Age = 6, Breed = "Persian", Name = "Kitty"};
-            Console.WriteLine(cat.SayHello());
-        }
+        return $"Hi. My name is {Name} and I am {Age} years old";
     }
 }

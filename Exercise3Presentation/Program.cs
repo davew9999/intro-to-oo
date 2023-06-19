@@ -1,58 +1,49 @@
 ﻿using System;
 
-namespace Exercise3Presentation
+var cat = new Cat("Kitty", 6, "Persian");
+var dog = new Dog("Walter", 4, "Jack Russell Terrier");
+Console.WriteLine("Cat: " + cat.WhatAreYou());
+Console.WriteLine("Dog: " + dog.WhatAreYou());
+
+public class Animal
 {
-    public class Animal
+    protected readonly string Name;
+    protected readonly int Age;
+    protected readonly string Breed;
+
+    public Animal(string name, int age, string breed)
     {
-        protected readonly string Name;
-        protected readonly int Age;
-        protected readonly string Breed;
-
-        public Animal(string name, int age, string breed)
-        {
-            Name = name;
-            Age = age;
-            Breed = breed;
-        }
-
-        public string SayHello()
-        {
-            return $"Hi. My name is {Name} and I am {Age} years old";
-        }
+        Name = name;
+        Age = age;
+        Breed = breed;
     }
 
-    public class Cat : Animal
+    public string SayHello()
     {
-        public Cat(string name, int age, string breed) : base(name, age, breed)
-        {
-        }
+        return $"Hi. My name is {Name} and I am {Age} years old";
+    }
+}
 
-        public string WhatAreYou()
-        {
-            return "I'm a cat!";
-        }
+public class Cat : Animal
+{
+    public Cat(string name, int age, string breed) : base(name, age, breed)
+    {
     }
 
-    public class Dog : Animal
+    public string WhatAreYou()
     {
-        public Dog(string name, int age, string breed) : base(name, age, breed)
-        {
-        }
+        return "I'm a cat!";
+    }
+}
 
-        public string WhatAreYou()
-        {
-            return "I'm a dog!";
-        }
+public class Dog : Animal
+{
+    public Dog(string name, int age, string breed) : base(name, age, breed)
+    {
     }
 
-    class Program
+    public string WhatAreYou()
     {
-        static void Main(string[] args)
-        {
-            var cat = new Cat("Kitty", 6, "Persian");
-            var dog = new Dog("Walter", 4, "Jack Russell Terrier");
-            Console.WriteLine("Cat: " + cat.WhatAreYou());
-            Console.WriteLine("Dog: " + dog.WhatAreYou());
-        }
+        return "I'm a dog!";
     }
 }

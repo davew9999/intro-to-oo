@@ -1,74 +1,57 @@
 ﻿using System;
 
-namespace Exercise3
+decimal productPrice = 200;
+var percentagePromotion = new PercentagePromotion("10Off", "Get 10% off", 10);
+Console.WriteLine("PercentagePromotion: " + percentagePromotion.DiscountToApply(productPrice));
+
+var moneyOffPromotion = new MoneyOffPromotion("£30Off", "Get £30 off", 30);
+Console.WriteLine("MoneyOffPromotion: " + moneyOffPromotion.DiscountToApply(productPrice));
+
+
+public class PercentagePromotion
 {
-    class Program
+    private readonly string Code;
+    private readonly string Description;
+    private readonly int Discount;
+
+    public PercentagePromotion(string code, string description, int discount)
     {
-        public class PercentagePromotion
-        {
-            private readonly string Code;
-            private readonly string Description;
-            private readonly int Discount;
+        Code = code;
+        Description = description;
+        Discount = discount;
+    }
 
-            public PercentagePromotion(string code, string description, int discount)
-            {
-                Code = code;
-                Description = description;
-                Discount = discount;
-            }
+    public string Details()
+    {
+        return $"Code: {Code}. Description: {Description}. Discount: {Discount}";
+    }
 
-            public string Details()
-            {
-                return $"Code: {Code}. Description: {Description}. Discount: {Discount}";
-            }
+    public decimal DiscountToApply(decimal price)
+    {
+        return price * (Discount / 100m);
+    }
+}
 
-            public decimal DiscountToApply(decimal price)
-            {
-                return price * (Discount / 100m);
-            }
-        }
+public class MoneyOffPromotion
+{
+    private readonly string Code;
+    private readonly string Description;
+    private readonly int Discount;
 
-        public class MoneyOffPromotion
-        {
-            private readonly string Code;
-            private readonly string Description;
-            private readonly int Discount;
+    public MoneyOffPromotion(string code, string description, int discount)
+    {
+        Code = code;
+        Description = description;
+        Discount = discount;
+    }
 
-            public MoneyOffPromotion(string code, string description, int discount)
-            {
-                Code = code;
-                Description = description;
-                Discount = discount;
-            }
+    public string Details()
+    {
+        return $"Code: {Code}. Description: {Description}. Discount: {Discount}";
+    }
 
-            public string Details()
-            {
-                return $"Code: {Code}. Description: {Description}. Discount: {Discount}";
-            }
-
-            public decimal DiscountToApply(decimal price)
-            {
-                return Discount;
-            }
-        }
-        public static void RunPercentagePromotion()
-        {
-            decimal productPrice = 200;
-            var promotion = new PercentagePromotion("10Off", "Get 10% off", 10);
-            Console.WriteLine("PercentagePromotion: " + promotion.DiscountToApply(productPrice));
-        }
-
-        public static void RunMoneyOffPromotion()
-        {
-            decimal productPrice = 200;
-            var promotion = new MoneyOffPromotion("£30Off", "Get £30 off", 30);
-            Console.WriteLine("MoneyOffPromotion: " + promotion.DiscountToApply(productPrice));
-        }
-
-        static void Main()
-        {
-            RunPercentagePromotion();
-            RunMoneyOffPromotion();
-        }
+    public decimal DiscountToApply(decimal price)
+    {
+        return Discount;
     }
 }
